@@ -21,6 +21,12 @@ function Navbar() {
         </li>
         <li className="nav-item">
           <Link to="/Courses" className="nav-link" >Courses</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/Cocktail" className="nav-link" >Cocktail</Link>
+        </li>  
+        <li className="nav-item">
+          <Link to="/Shoping" className="nav-link" >Shoping</Link>
         </li>   
       </ul>
       <form className="d-flex" role="search">
