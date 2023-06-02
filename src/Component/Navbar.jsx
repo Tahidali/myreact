@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import CourseDetails from '../Pages/CourseDetails';
+import { AppDetail } from '../App';
+import Carts from './Carts';
 
 function Navbar() {
+  const {login,setLogin,Cart,setCart}=useContext(AppDetail)
+  
 
   return (
 <nav className="navbar navbar-expand-lg bg-info">
@@ -28,11 +32,22 @@ function Navbar() {
         <li className="nav-item">
           <Link to="/Shoping" className="nav-link" >Shoping</Link>
         </li>   
+      
       </ul>
-      <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"  />
-        <button className="btn btn-outline-success" type="submit" >Search</button>
-      </form>
+      <div> 
+     <Link to="/Carts" type="button" className="btn btn-dark btn-sm me-3 mt-1 position-relative">
+      <span className='fa-solid fa-shopping-cart py-0'></span>
+      <span className="position-absolute top-0 start-100 translate-middle bg-danger border border-light rounded-circle d-grid justify-item-center align-item-center " style={{height:"28px",width:"28px" }}>
+          {Cart.length}
+        
+       <span className="visually-hidden">New alerts</span>
+      </span>
+      </Link>
+
+      {login ? (<button className='btn btn-danger' onClick={()=>setLogin(false)}>logout</button>)
+        :(<button className='btn btn-success' onClick={()=>setLogin(true)}>login</button>)
+      }
+        </div>
     </div>
   </div>
 </nav>

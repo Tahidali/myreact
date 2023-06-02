@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import { Courselist } from '../Courselist';
 
@@ -15,10 +15,11 @@ import { Courselist } from '../Courselist';
       function popup(){
         alert("Sorry Pay Your Fee.......")
       }
-
+const navigate=useNavigate()
   return (
     <>
     <div className="conatiner p-5">
+      <Link onClick={()=>navigate(-1)} className='btn btn-danger' > back</Link>
         <div className="row">
           <div className="col-md-4">
         <div className="card shadow">

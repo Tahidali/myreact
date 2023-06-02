@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 function CocktailDetails() {
   const { id } = useParams();
@@ -14,6 +14,8 @@ function CocktailDetails() {
   useEffect(() => {
     fetchdata();
   }, []);
+
+  const navigate=useNavigate()
 
   if (isloading) {
     return (
@@ -33,6 +35,7 @@ function CocktailDetails() {
   return (
     <>
       <div className="container py-5">
+        <button onClick={()=>navigate(-1)} className="btn btn-danger">Back</button>
         <div className="row  ">
           <div className="col-md-4 ">
             <div className="card shadow p-2 bg-light">

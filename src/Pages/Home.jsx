@@ -11,7 +11,6 @@ import { Pagination } from "swiper";
 function Home() {
   return (
    <>
-      <h1> i am Home</h1>
       <Swiper
         slidesPerView={2}
         spaceBetween={0}
