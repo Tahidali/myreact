@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 import Navbar from './Component/Navbar'
-import { Routes,Route} from 'react-router-dom/'
+import { Routes,Route, Router} from 'react-router-dom/'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Courses from './Pages/Courses'
@@ -14,7 +14,7 @@ import ShopingDetails from './Component/ShopingDetails'
 import PrivateRoute from './Component/PrivateRoute'
 import { Courselist } from './Courselist'
 import Carts from './Component/Carts'
-// import Fetch_api from './Component/Fetch_api'
+import Login from './Component/Login'
 
 
 export const AppDetail=createContext()
@@ -38,6 +38,7 @@ function App() {
     <Route path='/Shoping' element={<Shoping/>}></Route>
     <Route path='/ShopingDetails' element={<ShopingDetails/>}></Route>
     <Route path='/Carts' element={<Carts/>}></Route>
+    <Route path='/Login' element={<Login/>}></Route>
    </Routes>
    </AppDetail.Provider>
     {/* <Footer/> */}

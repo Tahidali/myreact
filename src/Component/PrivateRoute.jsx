@@ -1,19 +1,16 @@
-import React from 'react'
-import {useContext} from 'react'
-import {AppDetail} from "../App.js"
-import Container from "./Container"
-import LoginButton from './LoginButton'
+import React, { useContext } from 'react'
+import { Navigate } from 'react-router-dom'
+import { AppDetail } from '../App'
+import Container from './Container';
+import Login from './Login';
 
 function PrivateRoute({children}) {
-  const {login,setLogin}=useContext(AppDetail)
-  
+  const {login}=useContext(AppDetail)
   if(login){
-    return children ;
+    return children;
   }
-  return (<Container>
-          <LoginButton/>
-        </Container>
-  )
+  return <Container>
+   <Login/>
+  </Container>
 }
-
 export default PrivateRoute

@@ -21,7 +21,6 @@ function Courses() {
     }
     
   return (
-    <>
     <Container>
     <h3 className='text-center py-3'>Courses</h3>
     <div className="container">
@@ -48,8 +47,7 @@ function Courses() {
         </div>           
     </div>
     </Container>
-    </>
-  )
+   )
 }
 
 export default Courses

@@ -1,13 +1,23 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import CourseDetails from '../Pages/CourseDetails';
 import { AppDetail } from '../App';
 import Carts from './Carts';
+import LoginButton from './LoginButton';
 
 function Navbar() {
-  const {login,setLogin,Cart,setCart}=useContext(AppDetail)
-  
-
+  const {login,setLogin,Cart}=useContext(AppDetail)
+  const pathname=useLocation()
+  const navigate=useNavigate()
+ 
+function logout(){
+  setLogin(false);
+  localStorage.removeItem("Login")
+  navigate("/Login")
+}
+if(pathname==="/Login"){
+  return null;
+}
   return (
 <nav className="navbar navbar-expand-lg bg-info">
   <div className="container-fluid">
@@ -44,8 +54,8 @@ function Navbar() {
       </span>
       </Link>
 
-      {login ? (<button className='btn btn-danger' onClick={()=>setLogin(false)}>logout</button>)
-        :(<button className='btn btn-success' onClick={()=>setLogin(true)}>login</button>)
+      {login ? (<button className='btn btn-danger' onClick={logout}>logout</button>)
+        :<LoginButton/>
       }
         </div>
     </div>
