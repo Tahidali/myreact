@@ -2,8 +2,8 @@ import React from 'react'
 
 function About() {
   return (
-    <div>
-      <h1>i am About</h1>
+    <div className='container'>
+      <h1>About page</h1>     
     </div>
   )
 }

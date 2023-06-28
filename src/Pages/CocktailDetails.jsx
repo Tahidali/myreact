@@ -27,7 +27,7 @@ if(loading){
           <div className="card-header">
             <div className="row">
               <div className="col-3 d-flex ">
-                <Link to="/Cocktail" className='btn btn-success'>Back</Link>
+                <Link to="/Cocktail" className='btn text-dark btn-sm border border-2 border-primary'> <span className='fa-solid fa-angles-left fa-fade text-primary'></span></Link>
           <h6 className='text-center my-2 ms-5'>id:{id}</h6>
           </div>
           </div>

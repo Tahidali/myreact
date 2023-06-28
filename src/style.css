@@ -1,0 +1,9 @@
+/*  products details */
+.card img:hover{
+    transform: scale(1.020);
+}
+.CancelAdd{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}

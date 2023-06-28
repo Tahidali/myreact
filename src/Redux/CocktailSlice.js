@@ -33,6 +33,7 @@ export const getCocktailList= createAsyncThunk("fetchCocktailList",async(khudkap
 })
 
 //  ================= fetch for Cocktail Details for id ==================
+
 export const getCocktailDetails= createAsyncThunk("getallCocktailList",async(id)=>{
     const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
     return response.data.drinks[0]

@@ -9,6 +9,7 @@ import CocktailDetails from './Pages/CocktailDetails'
 import ProductDetails from './Pages/ProductDetails'
 import Login from './Pages/Login'
 import PrivateRoute from './Component/PrivateRoute'
+import Product2 from './Pages/Product2'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <Route path='/Cocktail/:id' element={<PrivateRoute><CocktailDetails/></PrivateRoute>}/>
     <Route path='/Product/:id' element={<ProductDetails/>}></Route>
     <Route path='/Products' element={<Product/>}></Route>
+    <Route path='/Product2' element={<Product2/>}></Route>
     <Route path='/Login' element={<Login/>}></Route>
    </Routes>
     </>

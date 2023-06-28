@@ -31,7 +31,7 @@ function Cocktail() {
         </div>
           }
       
-      {
+      { CocktailList &&
         CocktailList.map((item,index)=>{
           return <CocktailCard item={item} key={index}/>
         })

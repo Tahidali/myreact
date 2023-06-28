@@ -12,10 +12,10 @@ function ProductCard({ item }) {
         </div>
         <div className="card-body ">
         <img src={image} alt="" className="img-fluid" style={{height:"300px",width:"280px"}} />
-            <h5 className="text-truncate">Title:- {title}</h5>
+            <h5 className="text-truncate">{title}</h5>
             <button className="btn btn-info">${price}</button>
-            <h6>Category:-{category}</h6>
-            <p className="text-truncate">desp:-{description}</p>
+            <h6>{category}</h6>
+            <p className="text-truncate">{description}</p>
 
         </div>
       </div>

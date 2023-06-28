@@ -1,8 +1,13 @@
 import React from 'react'
-import {NavLink, useLocation} from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux';
+import {NavLink, useLocation, useNavigate} from "react-router-dom"
+import { Logout } from '../Redux/AuthSlice';
 
 function Navbar() {
   const data=useLocation()
+  const dispatch=useDispatch()
+  const navigate=useNavigate()
+  const {islogin}=useSelector((state)=>state.Auth)
   console.log (data);
   if(data.pathname==="/Login"){
     return null
@@ -27,14 +32,16 @@ function Navbar() {
           <NavLink className="nav-link"  to="/Cocktail">Cocktail</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link"  to="/Products">Products</NavLink>
+          <NavLink className="nav-link"  to="/Product2">Products</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link"  to="/Products">Fake Api</NavLink>
         </li>
       </ul>
-      <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button className="btn btn-outline-secondary" type="submit">Search</button>
-      </form>
     </div>
+    {
+      islogin? <button className='btn btn-danger' onClick={()=>dispatch(Logout())}>Logout</button>:<button className='btn btn-primary' onClick={()=>navigate("/login")}>login</button>
+    }
   </div>
 </nav>
 

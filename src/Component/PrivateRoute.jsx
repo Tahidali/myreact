@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 
-function PrivateRoute(children) {
+function PrivateRoute({children}) {
   const {islogin}= useSelector((state)=>state.Auth)
 
   if(islogin){
