@@ -8,7 +8,6 @@ import AddProductModel from "../Component/AddProductModel";
 import EditProductModel from "../Component/EditProductModel";
 import {DeleteProduct,EmptyError,getProduct2list,searchProduct,} from "../Redux/Product2Slice";
 
-
 function Product2() {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
@@ -83,6 +82,7 @@ function Product2() {
           {/* <button className='btn btn-primary'>Add Product</button> */}
         </div>
       </div>
+
       <div className="p-4 border border-1 rounded-3 shadow">
         <table className="table ">
           <thead>

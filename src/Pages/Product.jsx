@@ -24,7 +24,7 @@ function Product() {
   }
   return (
     <div>
-      <h2 className='text-center py-5'> i am Product</h2>
+      <h2 className='text-center py-2 border border-bottom-1'> Our Special Product for You</h2>
      <div className="container">
       <div className="row">
             { ProductList &&

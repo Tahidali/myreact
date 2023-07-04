@@ -59,7 +59,7 @@ const CocktailSlice = createSlice({
         [getCocktailList.rejected]:(state,action)=>{
             state.loading = false
         },
-        [getCocktailList.pending]:(state,action)=>{
+        [getCocktailDetails.pending]:(state,action)=>{
             state.loading=true
         },
         [getCocktailDetails.fulfilled]:(state,action)=>{

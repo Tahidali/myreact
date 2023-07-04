@@ -5,13 +5,13 @@ function ProductCard({ item }) {
   const { id, title, price, description, category, image } =item;
   const navigate=useNavigate()
   return (
-    <div className="col-md-4">
+    <div className="col-md-3">
       <div className="card shadow mb-4"  onClick={()=>navigate(`/Product/${id}`)}>
         <div className="card-header">
           <h6>Id:- {id}</h6>
         </div>
         <div className="card-body ">
-        <img src={image} alt="" className="img-fluid" style={{height:"300px",width:"280px"}} />
+        <img src={image} alt="" className="img-fluid" style={{height:"280px",width:"200px"}} />
             <h5 className="text-truncate">{title}</h5>
             <button className="btn btn-info">${price}</button>
             <h6>{category}</h6>

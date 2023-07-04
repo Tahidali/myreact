@@ -1,3 +1,7 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
 /*  products details */
 .card img:hover{
     transform: scale(1.020);
@@ -6,4 +10,7 @@
     display: flex;
     justify-content:space-between;
     align-items: center;
+    justify-content: space-between;
 }
+/* Shopping details */
+ 
