@@ -12,5 +12,6 @@ export const store=configureStore({
     Auth:AuthSlice,
     Product2Sl:Product2Slice,
     Shoping:ShopingSlice
+    
    }
 })

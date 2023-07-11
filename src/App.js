@@ -13,19 +13,20 @@ import Product2 from './Pages/Product2'
 import Example from './Component/Example'
 import Shoping from './Pages/Shoping'
 import ShopingCard from './Component/ShopingCard'
-import ReactCheckBox from './Pages/ReactCheckBox'
+import Cart from './Pages/Cart'
+import WeatherApp from './Component/WeatherApp'
 
 export const Appdeatails=createContext()
 
 
 function App() {
 const [cart,setCart]=useState([])
+const [ProductCarT,setProductCarT]=useState([])
+const [drinkscart,setDrinkscart]=useState([])
   return (
     <>
-    <Appdeatails.Provider value={cart}>
+    <Appdeatails.Provider value={{cart,setCart,ProductCarT,setProductCarT,drinkscart}}>
     <Navbar/>
-  
-
    <Routes>
     <Route path="/" element={<Home/>}></Route>
     <Route path="/About" element={<About/>}></Route>
@@ -37,10 +38,12 @@ const [cart,setCart]=useState([])
     <Route path='/Shoping' element={<Shoping/>}></Route>
     <Route path='/Shoping/:id' element={<ShopingCard/>}></Route>
     <Route path='/Login' element={<Login/>}></Route>
+    <Route path='/Cart' element={<Cart/>}></Route>
+    <Route path='/Weather' element={<WeatherApp/>}></Route>
    </Routes>
    </Appdeatails.Provider>
-   <ReactCheckBox/>
-   <Example/>
+   
+   {/* <Example/> */}
     </>
   )
 }

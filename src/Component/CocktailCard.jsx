@@ -1,18 +1,28 @@
-import React, { createContext, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { createContext, useContext,useRef } from "react";
+import { json, useNavigate } from "react-router-dom";
 import { Appdeatails } from "../App";
 
 function CocktailCard({ item }) {
   const { strDrink, idDrink, strInstructions, strGlass, strDrinkThumb } = item;
   const navigate = useNavigate();
+  const { cart, setCart } = useContext(Appdeatails);
+  const BtnChange= useRef()
 
-  const{cart,setCart}= useContext(Appdeatails)
-  function addTocart(item){
-      setCart([...cart,item])
+  function addTocart(item) {
+   const DataFound=cart.find((singleItem)=>singleItem.idDrink === item.idDrink)
+   const UpdatedData=([...cart,item])
+   if(DataFound){
+    return alert("You have Already Select This Item")
+   
+   }else{
+    setCart(UpdatedData)
+    localStorage.setItem("cart",JSON.stringify(UpdatedData))
+    BtnChange.current.style.background="red";
   }
+  }
+ 
   return (
-    <div
-      className="col-md-3" >
+    <div className="col-md-3">
       <div
         className="card mb-4 shadow "
         style={{ height: "400px", overflow: "hidden" }}
@@ -22,12 +32,21 @@ function CocktailCard({ item }) {
             <h6 className=" my-2">id:{idDrink}</h6>
           </div>
           <div className="cart-btn ">
-            <button className="btn btn-sm btn-warning" onClick={()=>addTocart(item)}>Add to Cart</button>
+            <button ref={BtnChange}
+              className="btn btn-sm btn-warning"
+              onClick={() => addTocart(item)}
+            >
+              Add to Cart
+            </button>
           </div>
+            
         </div>
         <div className="card-header">
-          <div className="card-body"  onClick={() => navigate(`/Cocktail/${idDrink}`)}
-      style={{ cursor: "pointer" }}>
+          <div
+            className="card-body"
+            onClick={() => navigate(`/Cocktail/${idDrink}`)}
+            style={{ cursor: "pointer" }}
+          >
             <img
               src={strDrinkThumb}
               alt=""

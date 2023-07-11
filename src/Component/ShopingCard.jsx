@@ -16,8 +16,10 @@ function ShopingCard() {
   return (
     <div className="container bg-light text-dark shadow" >
         <div className="row ">
-          <div className="col-md-5 py-5">
+          <div className="col-md-5 ">
+            <div className="d-flex  d-end">
           <Link to="/Shoping" className='btn text-dark btn-sm border border-2 border-primary'> <span className='fa-solid fa-angles-left fa-fade text-primary'></span></Link>
+          </div>
             <span className='fa-solid fa-'></span>
           {/* <div className="card p-3"> */}
             <img src={Shopingid.images} alt=""  className='img-fluid border border-3'/> 

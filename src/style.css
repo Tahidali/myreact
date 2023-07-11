@@ -1,7 +1,35 @@
 *{
     padding: 0px;
     margin: 0px;
+    font-family: serif;
 }
+.navbar ul li a:hover{
+    border-bottom: 1px solid yellow;
+    transition: 0.3s ease all;
+}
+
+/* home */
+.home{
+    background: fixed;
+    z-index: -1;
+    position: relative;
+}
+.home-head{
+    background-color: rgba(242, 242, 244, 0.1);
+    padding: 25px;
+    border-top-left-radius: 80px;
+}
+.home-containt {
+    position: absolute;
+    top: 170px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    color: white;
+}
+
+
 /*  products details */
 .card img:hover{
     transform: scale(1.020);
@@ -13,4 +41,33 @@
     justify-content: space-between;
 }
 /* Shopping details */
- 
+/* Cart hover */
+.cart:hover{
+    transition: 0.3s ease all;
+    transform: scale(1.01);
+}
+.CocktailBg{
+    background-image: url("https://i.pinimg.com/originals/0e/c7/93/0ec7934f4fa5134d2967fe5db2123443.jpg");
+    background-position: center;
+    filter: drop-shadow(10px);
+    background-size: contain;
+    background-blend-mode:hard-light;
+    color: white;
+}
+.Cocktail-b{
+    text-shadow: 10px 6px 10px blue;
+}
+.Cocktail-Border{
+    background-color: rgba(246, 246, 249, 0.089);
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    padding: 40px;
+}
+.Product-Contant{
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    background-color: rgba(246, 246, 249, 0.089);
+    padding: 40px;
+    color: white;
+
+}
