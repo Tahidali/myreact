@@ -18,6 +18,15 @@ function Navbar() {
         <li className="nav-item">
           <NavLink className="nav-link" to="/About">About</NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/data">Data</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/back">UserColor</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="Crud">Crud</NavLink>
+        </li>
       </ul>
       <form className="d-flex" role="search">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
