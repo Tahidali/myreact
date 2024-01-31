@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 function Data({data}) { 
-    const[search,setsearch]=useState("")
+    const[search,setsearch]=useState(" ")
+    
     const filterdata=data.filter((item)=>{
         return item.toLowerCase().includes(search.toLowerCase())
     })

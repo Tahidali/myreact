@@ -7,7 +7,7 @@ function Callback({getcolor}) {
         setActive(value)
         getcolor(value)
     }
-
+    
   return (
     <div className='col-md-6 py-4'>
       <input type="text" value={active} onChange={onchange}  className='form-control' placeholder='write a color'/>

@@ -1,6 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ 
 .ui{
     height: 300px;
     width: 300px;
     border: 2px solid;
 
+}
+h2 {
+    font-family: satisfy;
 }

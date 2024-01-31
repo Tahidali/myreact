@@ -1,0 +1,5 @@
+{
+    "workbench.editor.enablePreview": true,
+    "terminal.integrated.environmentChangesRelaunch": true,
+    "notebook.experimental.remoteSave": false
+}

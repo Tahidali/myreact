@@ -9,6 +9,7 @@ function Crud() {
   const [tabledata, setTabledata] = useState([]);
   const [editid, setEditid] = useState("");
   const [isbtn, setIsbtn] = useState(false);
+  const [data,setData]=useState(false)
   const [search, setSearch] = useState("");
   const [filteredData, setFilteredData] = useState([]);
 
@@ -25,11 +26,7 @@ function Crud() {
   function handleSearch(e) {
     const searchText = e.target.value.toLowerCase();
     const filteredResults = tabledata.filter(
-      (item) =>
-        item.fname.toLowerCase().includes(searchText) ||
-        item.lname.toLowerCase().includes(searchText) ||
-        item.email.toLowerCase().includes(searchText) ||
-        item.phone.toString().includes(searchText)
+      (item) =>item.fname.toLowerCase().includes(searchText)
     );
     setFilteredData(filteredResults);
     setSearch(searchText);
@@ -45,7 +42,7 @@ function Crud() {
   useEffect(() => {
     localStorage.setItem("crudData", JSON.stringify(tabledata));
     setFilteredData(tabledata)
-  }, [tabledata]);
+  }, [tabledata]);  
 
 
 
@@ -84,7 +81,7 @@ function Crud() {
     e.preventDefault();
     const Updatedata = tabledata?.map?.((item) => {
       if (item.id === editid) {
-        return { ...item, fname, lname, email, phone };
+        return { ...item, fname, lname,email, phone };
       }
       return item;
     });
@@ -156,7 +153,8 @@ function Crud() {
         </div>
         <hr />
       </div>
-      <div className="table offset-3 ">
+      {
+        tabledata.length>0 ?<div className="table offset-3 ">
         <thead
           className=" text-dark"
           style={{ width: "100%", background: "lightblue" }}
@@ -200,7 +198,10 @@ function Crud() {
             </>
           );
         })}
-      </div>
+      </div>:null
+        
+      }
+
     </div>
   );
 }
